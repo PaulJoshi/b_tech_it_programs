@@ -3,9 +3,9 @@
 f, s = 1, 0.0
 
 def factorial(n):
-    return 1 if n == 0 or n == 1
-    f = f * i for i in range(1, n + 1)
-    return f
+    if (n == 0 or n == 1): 
+        return 1
+    return [f * i for i in range(1, n + 1)]
 
 n = int(input("Enter the value of n: "))
 for i in range(1, n + 1):
