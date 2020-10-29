@@ -11,4 +11,4 @@ def Fibonacci(n):
 n = int(input("Enter a number: "))
 if n < 0:
     print("Incorrect input")
-print(f"nth Fibonacci number is {Fibonacci(n)}")
+print(f"{n}th Fibonacci number is {Fibonacci(n)}")
