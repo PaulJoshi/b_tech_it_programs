@@ -8,4 +8,7 @@ def nCr( n, r ):
 n = int(input("Enter a number (n) : "))
 r = int(input("Enter a number (r) : "))
 
-print(f"Number of Combinations (nCr) is {int(nCr(n, r))}")
+if n >= r and r >= 0 :
+    print(f"Number of Combinations (nCr) is {int(nCr(n, r))}")
+else :
+    print("Please enter n ≥ r ≥ 0")
