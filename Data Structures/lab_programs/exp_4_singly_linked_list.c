@@ -42,15 +42,12 @@ struct node *insert_end(struct node *list, int item)
         temp -> next = NULL;
         head = list;
         if( list == NULL )
-        {
             list = temp;
-            head = list;
-        }
         else
         {
-                while( list -> next != NULL)
-                    list = list -> next;
-                list -> next = temp;
+            while( list -> next != NULL)
+                list = list -> next;
+            list -> next = temp;
         }
         return(head);
 }
@@ -65,7 +62,7 @@ struct node *insert_front(struct node *list, int item)
     return (head);
 }
 
-struct node *insert_after(struct node *list, int item, int search_item)
+void *insert_after(struct node *list, int item, int search_item)
 {
     struct node *temp;
     temp = (struct node *)malloc(sizeof(struct node));
@@ -110,20 +107,21 @@ struct node *delete_end(struct node *list)
     {   printf("List is empty\n");
         return(NULL);
     }
-    if (list -> next == NULL)
+    else if (list -> next == NULL)
     { 
         free(list); 
         return(NULL);
     } 
+    else
+    {
+        struct node *second_last = list;
+        while (second_last -> next -> next != NULL) 
+            second_last = second_last -> next; 
 
-    struct node *second_last = list;
-    while (second_last->next->next != NULL) 
-        second_last = second_last->next; 
-
-    printf("%d removed from the end\n", second_last -> next -> data);
-    free(second_last -> next); 
-    second_last -> next = NULL; 
-
+        printf("%d removed from the end\n", second_last -> next -> data);
+        free(second_last -> next); 
+        second_last -> next = NULL; 
+    }
     return(list);
 }
 
@@ -218,7 +216,7 @@ void main()
             case 1:
                 printf("Enter value to insert: ");
                 scanf("%d", &new_item);
-                head=insert_front(head, new_item);
+                head = insert_front(head, new_item);
                 break;
             case 2:
                 printf("Enter value to insert: ");
