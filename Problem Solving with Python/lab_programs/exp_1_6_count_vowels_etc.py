@@ -14,7 +14,8 @@ for i in str:
     elif i == '?':
         question_marks += 1
 
-print(f"\nNumber of vowels:           {vowels}")
-print(f"Number of consonants:       {consonants}")
-print(f"Number of words:            {len(str.split())}")
-print(f"Number of question marks:   {question_marks}\n")
+print(f'''
+Number of vowels:           {vowels}
+Number of consonants:       {consonants}
+Number of words:            {len(str.split())}
+Number of question marks:   {question_marks}\n''')

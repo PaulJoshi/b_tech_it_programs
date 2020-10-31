@@ -127,6 +127,7 @@ struct node *delete_end(struct node *list)
 
 struct node *delete(struct node *list, int search_item)
 {
+    int flag = 0;
     if (list == NULL)
     {   
         printf("List is empty\n");
@@ -146,8 +147,8 @@ struct node *delete(struct node *list, int search_item)
             head = list;
         }
         else
-        {   
-            while( list != NULL )
+        {
+            while( list -> next != NULL )
             {   
                 if( list -> data == search_item )
                 {   
@@ -155,6 +156,7 @@ struct node *delete(struct node *list, int search_item)
                     back -> next = list -> next;
                     printf("%d removed\n", search_item);
                     free(temp);
+                    flag = 1;
                     return(head);
                 }
                 else
