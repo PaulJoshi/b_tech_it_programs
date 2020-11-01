@@ -34,13 +34,12 @@ void display(struct node *list)
     }
 }
 
-struct node *insert_end(struct node *list, int item)
+void *insert_end(struct node *list, int item)
 {
-        struct node *temp, *head;
+        struct node *temp;
         temp=(struct node *)malloc(sizeof(struct node));
         temp -> data = item;
         temp -> next = NULL;
-        head = list;
         if( list == NULL )
             list = temp;
         else
@@ -49,7 +48,6 @@ struct node *insert_end(struct node *list, int item)
                 list = list -> next;
             list -> next = temp;
         }
-        return(head);
 }
 
 struct node *insert_front(struct node *list, int item)
@@ -101,28 +99,25 @@ struct node *delete_front(struct node *list)
     }
 }
 
-struct node *delete_end(struct node *list)
+void *delete_end(struct node *list)
 { 
-    if (list == NULL)
-    {   printf("List is empty\n");
-        return(NULL);
-    }
-    else if (list -> next == NULL)
-    { 
-        free(list); 
-        return(NULL);
-    } 
-    else
+    if (list != NULL)
     {
-        struct node *second_last = list;
-        while (second_last -> next -> next != NULL) 
-            second_last = second_last -> next; 
+        if (list -> next == NULL)
+        { 
+            free(list); 
+        } 
+        else
+        {
+            struct node *second_last = list;
+            while (second_last -> next -> next != NULL) 
+                second_last = second_last -> next; 
 
-        printf("%d removed from the end\n", second_last -> next -> data);
-        free(second_last -> next); 
-        second_last -> next = NULL; 
+            printf("%d removed from the end\n", second_last -> next -> data);
+            free(second_last -> next); 
+            second_last -> next = NULL; 
+        }
     }
-    return(list);
 }
 
 struct node *delete(struct node *list, int search_item)
@@ -223,7 +218,7 @@ void main()
             case 2:
                 printf("Enter value to insert: ");
                 scanf("%d", &new_item );
-                head = insert_end(head, new_item);
+                insert_end(head, new_item);
                 break;
             case 3:
                 printf("Enter value to insert: ");
@@ -236,7 +231,7 @@ void main()
                 head = delete_front(head);
                 break;
             case 5:
-                head = delete_end(head);
+                delete_end(head);
                 break;
             case 6:
                 printf("Enter item to delete: ");

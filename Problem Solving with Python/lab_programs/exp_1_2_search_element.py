@@ -5,7 +5,7 @@ lst = []
 #input the list
 n = int(input("Enter number of elements : "))  
 for i in range(0, n): 
-    ele = input()
+    ele = input("Enter an element: ")
     lst.append(ele)
 
 #search element
