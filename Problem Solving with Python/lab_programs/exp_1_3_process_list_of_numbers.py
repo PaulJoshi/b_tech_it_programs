@@ -9,5 +9,5 @@ for i in range(0, n):
     ele = int(input())
     lst.append(ele)
 
-print(f"Average of entered numbers is {sum(lst) / len(lst)}")
-print(f"The square of each value in the list is {[i*i for i in lst]}")
+print(f"\nAverage of entered numbers is {sum(lst) / len(lst)}")
+print(f"The square of each value in the list is {[i*i for i in lst]}\n")

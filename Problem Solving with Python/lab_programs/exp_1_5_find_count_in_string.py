@@ -3,4 +3,4 @@
 st = input("\nEnter a string: ")
 substring = input("Enter a substring: ")
 
-print(f"The substring appears {st.count(substring)} times in the string\n")
+print(f"\nThe substring '{substring}' appears {st.count(substring)} times in the string\n")

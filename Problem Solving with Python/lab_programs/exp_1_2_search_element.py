@@ -14,6 +14,6 @@ item = input("Enter element to search for: ")
 for i in lst:
     count += 1
     if i == item:
-        print(f"Element '{item}' found in list at {count}")
+        print(f"Element '{item}' found in list at position {count}")
         flag = 0
 if flag == 1: print("Element not found")
