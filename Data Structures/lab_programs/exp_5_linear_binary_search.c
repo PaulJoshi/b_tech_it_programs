@@ -5,10 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int a[25], beg, item, end, n, num, i, c, mid;
+int a[25], beg, mid, end, item, n, i, c, temp;
 
 void linear_search()
 {
+    printf( "Enter item to search: " );
+    scanf( "%d", &item );
     for( i = 0; i < n; i++ )
     {
         if( a[i] == item )
@@ -17,12 +19,14 @@ void linear_search()
             break;
         }
     }
-    if( i==n )
-    printf( "\nItem not found" );
+    if( i == n )
+        printf( "\nItem not found" );
 }
 
 void binary_search()
 {
+    printf( "Enter item to search: " );
+    scanf( "%d", &item );
     end = n - 1;
     beg = 0;
     mid = ( beg + end ) / 2;
@@ -33,7 +37,7 @@ void binary_search()
             printf( "\nItem found at position %d", mid + 1 );
             break;
         }
-        else if( a[mid] > item )
+        else if( item < a[mid] )
             end = mid - 1;
         else
             beg = mid + 1;
@@ -43,19 +47,34 @@ void binary_search()
         printf( "\nItem not found" );
 }
 
+void sort()
+{
+    for (int i = 0; i < n; i++)  
+        for (int j = i+1; j < n; j++)   
+           if(a[i] > a[j])
+           {    
+                temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+           }
+    printf("\nSorted Array is: ");
+    for (int i = 0; i < n; i++)
+        printf("%d ", a[i]);
+}
+
 void user_input()
 {
     printf( "\nEnter the number of elements in the array: " );
     scanf( "%d", &n );
-    printf( "\nEnter the sorted array: " );
+    printf( "Enter the array: " );
     for( i = 0; i < n; i++ )
         scanf( "%d", &a[i] );
-    printf( "\nEnter item to search: " );
-    scanf( "%d", &item );
+    sort();
 }
 
 void main()
 {
+    user_input();
     printf( "\nMenu\n" );
     printf( "\n1. Linear Search" );
     printf( "\n2. Binary Search" );
@@ -63,14 +82,8 @@ void main()
 
     while(1)
     {
-        printf( "\n\nEnter your coice: " );
+        printf( "\n\nEnter your choice: " );
         scanf( "%d", &c );
-        if( c == 3 )
-            exit(0);
-        else
-        {
-            user_input();
-            ( c == 1 ) ? linear_search() : binary_search() ;
-        }
+        ( c == 3 ) ? exit(0) : ( c == 1 ) ? linear_search() : binary_search() ;
     }
 }
