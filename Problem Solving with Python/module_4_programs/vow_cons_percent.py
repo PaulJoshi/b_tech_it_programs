@@ -4,11 +4,9 @@
 filename = input("Enter the filename: ")
 
 with open(filename) as file:
-    vowels = 0
-    consonants = 0
-    count = 0
+    vowels, consonants, count = 0, 0, 0
     for char in file.read().lower():
-        if char in ('a', 'e', 'i', 'o', 'u'):
+        if char in 'aeiou':
             vowels += 1
         elif char.isalpha():
             consonants += 1
