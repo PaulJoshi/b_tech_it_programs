@@ -1,5 +1,5 @@
 /* Write a menu driven C program to implement Queue using Singly Linked list. Perform the operations on the Queue
- (i) Insertion (ii) Deletion (iii) Is empty (iv) Is full (v) Display */
+ (i) Insertion (ii) Deletion (iii) Is empty (iv) Display */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,7 +23,7 @@ void insert(int data)
     }
     else
     {
-        temp=(struct node *)malloc(sizeof(struct node));
+        temp = (struct node *)malloc(sizeof(struct node));
         rear -> next = temp;
         temp -> data = data;
         temp -> next = NULL;

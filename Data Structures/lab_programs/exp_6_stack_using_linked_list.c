@@ -1,5 +1,5 @@
 /* Write a menu driven C program to implement stack using Singly Linked list. Perform the operations on the stack
- (i) Push (ii) Pop (iii) Is empty (iv) Is full (v) Display */
+ (i) Push (ii) Pop (iii) Is empty (iv) Display */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -57,8 +57,6 @@ void isempty()
         printf("\nStack is not empty with %d elements", count);
 }
 
-void isfull();
-
 void display()
 {
     struct node *temp;
@@ -79,14 +77,13 @@ void display()
  
 void main()
 {
-    int item, ch, e;
+    int item, ch;
  
     printf("\n1 - Push");
     printf("\n2 - Pop");
     printf("\n3 - Isempty");
-    printf("\n4 - Isfull");
-    printf("\n5 - Dipslay");
-    printf("\n6 - Exit");
+    printf("\n4 - Dipslay");
+    printf("\n5 - Exit");
  
     top = NULL;
  
@@ -109,12 +106,9 @@ void main()
                 isempty();
                 break;
             case 4:
-                isfull();
-                break;
-            case 5:
                 display();
                 break;
-            case 6:
+            case 5:
                 exit(0);
             default :
                 printf("Invalid Option");
