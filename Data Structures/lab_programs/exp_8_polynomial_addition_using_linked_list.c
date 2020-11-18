@@ -1,13 +1,13 @@
 // Write a menu driven C program to perform polynomial addition using linked list
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 struct node
 {
     int coeff;
     int pow;
-    struct node * next;
+    struct node *next;
 };
 
 struct node *new(struct node *head)
@@ -53,30 +53,34 @@ void display(struct node *list)
 
 struct node *add(struct node *result, struct node  *poly_1, struct node  *poly_2)
 {
-    struct node *temp;;
+    struct node *temp;
     temp = (struct node *)malloc(sizeof(struct node));
     temp -> next = NULL;
     result = temp;
 
-    while(poly_1 && poly_2) {
-        if (poly_1 -> pow > poly_2 -> pow) {
+    while(poly_1 && poly_2)
+    {
+        if (poly_1 -> pow > poly_2 -> pow)
+        {
             temp -> pow = poly_1 -> pow;
             temp -> coeff = poly_1 -> coeff;
             poly_1 = poly_1 -> next;
         }
-        else if (poly_1 -> pow < poly_2 -> pow) {
+        else if (poly_1 -> pow < poly_2 -> pow)
+        {
             temp -> pow = poly_2 -> pow;
             temp -> coeff = poly_2 -> coeff;
             poly_2 = poly_2 -> next;
         }
-        else {
+        else
+        {
             temp -> pow = poly_1 -> pow;
             temp -> coeff = poly_1 -> coeff + poly_2 -> coeff;
             poly_1 = poly_1 -> next;
             poly_2 = poly_2 -> next;
         }
-
-        if(poly_1 && poly_2) {
+        if(poly_1 && poly_2)
+        {
             temp -> next = (struct node *)malloc(sizeof(struct node));
             temp = temp -> next;
             temp -> next = NULL;

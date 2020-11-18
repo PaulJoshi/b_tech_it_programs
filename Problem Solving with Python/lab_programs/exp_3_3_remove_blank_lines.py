@@ -1,1 +1,0 @@
-# Develop a python code to read a text file, copy the contents to another file after removing the blank lines.
