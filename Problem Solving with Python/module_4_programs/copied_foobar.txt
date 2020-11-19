@@ -1,2 +1,4 @@
-1 Hello, how are you?
-2 This is Python
+HELLO, HOW ARE YOU?
+THIS IS PYTHON
+
+PRINT MY NAME IS PAUL
