@@ -82,7 +82,7 @@ void main()
     printf("\n1 - Push");
     printf("\n2 - Pop");
     printf("\n3 - Isempty");
-    printf("\n4 - Dipslay");
+    printf("\n4 - Display");
     printf("\n5 - Exit");
  
     top = NULL;

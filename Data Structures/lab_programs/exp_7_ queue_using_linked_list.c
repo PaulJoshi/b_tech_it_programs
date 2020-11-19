@@ -66,7 +66,7 @@ void isempty()
     if ((front == NULL) && (rear == NULL))
         printf("\n Queue is empty");
     else
-        printf("Queue is not empty and has %d elements", count);
+        printf("Queue is not empty and has %d elements\n", count);
 }
 
 void display()
@@ -116,6 +116,7 @@ void main()
                 break;
             case 4:
                 display();
+                break;
             case 5:
                 exit(0);
                 break;
