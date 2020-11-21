@@ -3,12 +3,13 @@
 
 phone_dict = {}
 
-n = int(input("How many? "))
+n = int(input("\nHow many contacts? "))
 
 for i in range(n):
     name = input("Enter name: ")
     number = int(input("Enter number: "))
     phone_dict[number] = name
+    print("\n")
 
 for number, name in sorted(phone_dict.items(), key=lambda x: x[1]):
     print(f"{name} : {number}")

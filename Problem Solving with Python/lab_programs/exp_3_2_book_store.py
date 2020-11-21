@@ -4,9 +4,16 @@
 books = {}
 
 def change_details(choice):
-    book = input("\nEnter name of book: ")
+    book = input(f"\nEnter name of book to {'buy' if choice == 1 else 'sell'}: ")
     count = int(input(f'How many copies of "{book}": '))
-    books[book] = books.get(book, 0) + count if choice == 1 else books.get(book, 0) - count
+    
+    if choice == 1 :
+        books[book] = books.get(book, 0) + count
+    else :
+        if books.get(book, 0) < count :
+            print("Not enough books")
+            return
+        books.get(book, 0) - count
 
 print('\n1. Add book\n2. Sell book\n3. Exit')
 
