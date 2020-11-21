@@ -4,7 +4,7 @@ file_1 = open("foobar.txt")
 file_2 = open("copied_foobar.txt", "w")
 
 for line in file_1:
-    if line != '':
+    if line != '\n':
         file_2.write(line)
 
 file_1.close()
