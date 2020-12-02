@@ -11,8 +11,8 @@ following operations on it:
     (iii) Display the linked list.
     (iv) Search an element in the list. */
 
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 struct node
 {
@@ -34,10 +34,10 @@ void display(struct node *list)
     }
 }
 
-void *insert_end(struct node *list, int item)
+void insert_end(struct node *list, int item)
 {
         struct node *temp;
-        temp=(struct node *)malloc(sizeof(struct node));
+        temp = (struct node *)malloc(sizeof(struct node));
         temp -> data = item;
         temp -> next = NULL;
         if( list == NULL )
@@ -60,7 +60,7 @@ struct node *insert_front(struct node *list, int item)
     return (head);
 }
 
-void *insert_after(struct node *list, int item, int search_item)
+void insert_after(struct node *list, int item, int search_item)
 {
     struct node *temp;
     temp = (struct node *)malloc(sizeof(struct node));
@@ -99,7 +99,7 @@ struct node *delete_front(struct node *list)
     }
 }
 
-void *delete_end(struct node *list)
+void delete_end(struct node *list)
 { 
     if (list != NULL)
     {
