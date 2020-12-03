@@ -51,5 +51,5 @@ void main()
     tree -> rchild -> rchild -> rchild = new(7);
     tree -> rchild -> rchild -> rchild -> rchild = new(8);
 
-    printf("Height of binary tree: %d", tree_height(tree));
+    printf("\nHeight of binary tree: %d\n", tree_height(tree));
 }

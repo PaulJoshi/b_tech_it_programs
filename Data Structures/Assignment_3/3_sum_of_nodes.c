@@ -44,5 +44,5 @@ void main()
     tree -> rchild -> rchild -> rchild = new(7);  
     tree -> rchild -> rchild -> rchild -> rchild = new(8);  
 
-    printf("Sum of nodes of binary tree: %d", sum_of_nodes(tree, sum));
-} 
+    printf("\nSum of nodes of binary tree: %d\n", sum_of_nodes(tree, sum));
+}
