@@ -1,192 +1,240 @@
-/* Write a menu driven C program to implement a binary binary using linked list
+/* Write a menu driven C program to implement a binary tree using linked list
 and perform the following operations on it
     (i) Insert a new node.
     (ii) Delete a specified node.
     (iii) Search a specified node. */
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 struct binary
 {
-	int data;
-	struct binary *lchild, *rchild;
+    int data;
+    struct binary *lchild, *rchild;
 };
 
-void insertion(struct node*root, int value, int element)
+int flag = 0;
+int countloop = 0;
+
+struct binary *create()
 {
-    struct node*temp;
-  char x;
+    int item;
+    struct binary *newbinary;
+    newbinary = (struct binary *)malloc(sizeof(struct binary));
+	if (flag == 0)
+	{
+		printf("\nEnter root element: ");
+		flag = 1;
+	}
+    scanf("%d", &item);
+    if (item == -1)
+        return 0;
+    else
+        newbinary -> data = item;
+    printf("Enter the lchild of %d (-1 to exit) : ", item);
+    newbinary -> lchild = create();
+    printf("Enter the rchild of %d (-1 to exit) : ", item);
+    newbinary -> rchild = create();
+    return newbinary;
+}
 
-  printf("Enter the element under which to insert :-");
-        scanf("%d",&c);
-
-if(root == NULL){
+void search(struct binary *root, int value)
+{
+    if (root == NULL)
         printf("Tree is empty\n");
+    else
+    {
+        if (root -> data == value)
+        {
+            flag = 1;
+            return;
+        }
+        if (flag == 0 && root -> lchild != NULL)
+            search(root -> lchild, value);
+        if (flag == 0 && root -> rchild != NULL)
+            search(root -> rchild, value);
     }
-    else{
+}
 
-        if(root->data == value){
-            flag=1;
-            printf("l for left r for right");
-            scanf("%s",&x);
-            if (x=='l'||x=='L')
+void insertion(struct binary *root, int value, int element)
+{
+    struct binary *temp;
+    char x;
+
+    if (root == NULL)
+        printf("Tree is empty\n");
+    else
+    {
+        if (root -> data == value)
+        {
+            flag = 1;
+            printf("l for lchild r for rchild. Enter your choice: ");
+            scanf("%s", &x);
+            if (x == 'l' || x == 'L')
+            {
+                if (root -> lchild == NULL)
                 {
-                    if (root->left==NULL)
-
-{
-temp=(struct node *)malloc(sizeof(struct node));
-
-temp->data=element;
-
-root->left=temp;
-printf("insertion of %d is done as %d left child ",element,value);
-}
-
-else if(root->left!=NULL)
-    {
-        printf("such postion cant be find out");
-    }
-         }
-             if (x=='r'||x=='R')
-                {   flag=1;
-                    if (root->right==NULL)
-
-{
-temp=(struct node *)malloc(sizeof(struct node));
-
-temp->data=element;
-
-root->right=temp;
-printf("insertion of %d is done as %d right child ",element,value);
-}
-}
-else if(root->right!=NULL)
-    {
-        printf("such postion cant be find out");
-    }
-
-
-        } }
-
-        if(flag == 0 && root->left != NULL){
-        insertion(root->left, value,element);
-        }
-
-        if(flag == 0 && root->right != NULL){
-        insertion(root->right, value,element);
+                    temp = (struct binary *)malloc(sizeof(struct binary));
+                    temp -> data = element;
+                    root -> lchild = temp;
+                    printf("\nInserted %d at %d lchild", element, value);
+                }
+                else if (root -> lchild != NULL)
+                    printf("Position not found");
+            }
+            if (x == 'r' || x == 'R')
+            {
+                if (root -> rchild == NULL)
+                {
+                    temp = (struct binary *)malloc(sizeof(struct binary));
+                    temp -> data = element;
+                    root -> rchild = temp;
+                    printf("\nInserted %d at %d rchild", element, value);
+                }
+                else if (root -> rchild != NULL)
+                    printf("Position not found");
+            }
         }
     }
 
+    if (flag == 0 && root -> lchild != NULL)
+        insertion(root -> lchild, value, element);
 
-struct binary *delete(struct binary *ptr, int item)
-{
-	struct binary *p1,*p2;
-	if(!ptr)
-	{
-		printf("\nNode not found ");
-		return(ptr);
-	}
-	else
-	{
-		if(ptr -> data < item)
-			ptr -> rchild = delete(ptr -> rchild, item);
-		else if (ptr -> data > item)
-		{
-			ptr -> lchild = delete(ptr -> lchild, item);
-			return ptr;
-		}
-		else
-		{
-			if(ptr -> data == item)    
-			{
-				if(ptr -> lchild == ptr -> rchild) 
-				{
-					free(ptr);
-					return(NULL);
-				}
-				else if(ptr -> lchild == NULL)
-				{
-					p1 = ptr -> rchild;
-					free(ptr);
-					return p1;
-				}
-				else if(ptr -> rchild == NULL)
-				{
-					p1=ptr -> lchild;
-					free(ptr);
-					return p1;
-				}
-				else
-				{
-					p1=ptr -> rchild;
-					p2=ptr -> rchild;
-					while(p1 -> lchild != NULL)
-						p1=p1 -> lchild;
-					p1 -> lchild = ptr -> lchild;
-					free(ptr);
-					return p2;
-				}
-			}
-		}
-	}
-	return(ptr);
+    if (flag == 0 && root -> rchild != NULL)
+        insertion(root -> rchild, value, element);
 }
 
-struct binary *search(struct binary *tree)
+void deletion(struct binary *root, int value)
 {
-	int num, i;
-	struct binary *ptr;
-	ptr = tree;
-	printf("\nEnter the element to be searched :");
-	scanf(" %d", &num);
-	fflush(stdin);
-	while(ptr)
-	{
-		if(num > ptr -> data)
-		    ptr = ptr -> rchild; else if(num < ptr -> data)
-		    ptr = ptr -> lchild; else
-		    break;
-	}
-	if(ptr)
-		printf("\nElement %d which was searched is found and is = %d", num, ptr -> data);
-	else
-	   printf("\nElement %d does not exist in the binary tree", num);
-	return(tree);
+    countloop++;
+    struct binary *temp;
+    char x;
+
+    if (root == NULL)
+        printf("Tree is empty\n");
+    else
+    {
+
+        if ((root -> data == value) && countloop == 1)
+        {
+            flag = 1;
+            if ((root -> lchild == NULL) && (root -> rchild == NULL))
+            {
+                temp = root;
+                root = 0;
+                printf("\n%d deleted\n", temp -> data);
+                free(temp);
+                return;
+            }
+            else
+            {
+                printf("Deletion only allowed at leaf nodes!\n");
+                return;
+            }
+        }
+
+        if (root -> lchild != NULL)
+        {
+            if (root -> lchild -> data == value)
+            {
+                flag = 1;
+                temp = root -> lchild;
+                if (temp -> lchild == NULL && temp -> rchild == NULL)
+                {
+
+                    root -> lchild = NULL;
+                    printf("\n%d deleted", temp -> data);
+                    free(temp);
+                    return;
+                }
+                else
+                {
+                    printf("Deletion not possible");
+                    return;
+                }
+            }
+        }
+
+        if (root -> rchild != NULL)
+        {
+            if (root -> rchild -> data == value)
+            {
+                flag = 1;
+                temp = root -> rchild;
+                if (temp -> rchild == NULL && temp -> rchild == NULL)
+                {
+                    root -> rchild = NULL;
+                    printf("%d deleted", temp -> data);
+                    free(temp);
+                    return;
+                }
+                else
+                {
+                    printf("Deletion not possible");
+                    return;
+                }
+            }
+        }
+
+        if (flag == 0 && root -> lchild != NULL)
+            deletion(root -> lchild, value);
+        if (flag == 0 && root -> rchild != NULL)
+            deletion(root -> rchild, value);
+    }
 }
 
 void main()
 {
-	struct binary *tree;
-	int choice, item, item_no;
-	tree = NULL;
-	printf("\n1. Insert");
-	printf("\n2. Delete");
-	printf("\n3. Search");
-	printf("\n4. Exit ");
-	while(1)		
-	{	printf("\n\n Enter choice: ");
-		scanf(" %d", &choice);
-		switch(choice)
-		{
+    int ch, a, b;
+    struct binary *root;
+
+    root = 0;
+    root = create();
+
+	printf("\n Menu\n\n 1.Insert\n 2.Delete\n 3.Search\n 4.Exit");
+
+    while (1)
+    {
+		printf("\n\nEnter your choice: ");
+        scanf("%d", &ch);
+
+        switch(ch)
+        {
 			case 1:
-				printf("\nEnter new element: ");
-				scanf("%d", &item);
-				tree = insert(tree, item);
-				printf("\ntree is %d", tree -> data);
+				flag = 0;
+				printf("Enter where to insert: ");
+				scanf("%d", &a);
+				printf("Enter element to insert: ");
+				scanf("%d", &b);
+				insertion(root, a, b);
+				if (flag == 0)
+					printf("Value %d does not exist", a);
 				break;
+
 			case 2:
-				printf("\nEnter the element to be deleted : ");
-				scanf(" %d", &item_no);
-				tree = delete(tree, item_no);
+				flag = 0;
+				printf("Enter element to delete: ");
+				scanf("%d", &a);
+				countloop = 0;
+				deletion(root, a);
+				if (flag == 0)
+					printf("Value %d does not exist ", a);
 				break;
+			
 			case 3:
-				tree = search(tree);
+				flag = 0;
+				printf("Enter element to search: ");
+				scanf("%d", &a);
+				search(root, a);
+				if (flag == 1)
+					printf("Value %d exists ", a);
+				else
+					printf("Value %d not found ", a);
 				break;
+
 			case 4:
 				exit(0);
-			default :
-				printf("\nInvalid input ");
-		}
-	}
+				break;
+        }
+    }
 }
