@@ -119,7 +119,7 @@ void main()
     printf("\n1 - Enter first expression");
     printf("\n2 - Enter second expression");
     printf("\n3 - Sum of expressions");
-    printf("\n4 - Sum of Exit");
+    printf("\n4 - Exit");
 
     while(1)
     {

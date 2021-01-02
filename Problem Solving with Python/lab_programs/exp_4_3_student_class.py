@@ -11,8 +11,8 @@ class Student :
     def showData(self) :
         print(f"\nStudent Name : {self.name}\nRoll no      : {self.rollno}")
 
-student_1 = Student("Paul", 52)
-student_2 = Student("Parvathi", 53)
+student_1 = Student("Luke", 52)
+student_2 = Student("Leia", 53)
 
 student_1.showData()
 student_2.showData()

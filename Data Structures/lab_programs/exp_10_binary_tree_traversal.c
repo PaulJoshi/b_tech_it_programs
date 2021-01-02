@@ -4,8 +4,8 @@ and perform the following traversals on it
     (ii) Pre order
     (iii) Post-order */
 
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 struct binary
 {
