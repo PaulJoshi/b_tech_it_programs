@@ -4,56 +4,9 @@
     (iii) Display (using Adjacency Matrix) */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int q[20], top = -1, front = -1, rear = -1, a[20][20], vis[20], stack[20];
-
-void main()
-{
-    int n, i, s, ch, j;
-    char c, temp;
-    printf("ENTER THE NUMBER VERTICES ");
-    scanf("%d", &n);
-    for(i = 1; i <= n; i++)
-    {
-        for(j =1; j <= n; j++)
-        {
-            printf("ENTER 1 IF %d HAS A NODE WITH %d ELSE 0 ", i, j);
-            scanf("%d", &a[i][j]);
-        }
-    }
-    printf("THE ADJACENCY MATRIX IS\n");
-    for(i = 1; i <= n; i++)
-    {
-        for(j =1; j <= n; j++)
-            printf(" %d", a[i][j]);
-        printf("\n");
-    }
-    do
-    {
-        for(i = 1; i <= n; i++)
-            vis[i]=0;
-        printf("\nMENU");
-        printf("\n1.B.F.S");
-        printf("\n2.D.F.S");
-        printf("\nENTER YOUR CHOICE");
-        scanf("%d", &ch);
-        printf("ENTER THE SOURCE VERTEX :");
-        scanf("%d", &s);
-
-        switch(ch)
-        {
-            case 1:
-                bfs(s, n);
-                break;
-            case 2:
-                dfs(s, n);
-                break;
-        }
-        printf("DO U WANT TO CONTINUE(Y/N) ? ");
-        scanf("%c", &temp);
-        scanf("%c", &c);
-    }while((c == 'y') || (c == 'Y'));
-}
 
 int delete()
 {
@@ -70,7 +23,7 @@ int delete()
 void add(int item)
 {
     if(rear == 19)
-    printf("QUEUE FULL");
+    printf("Queue Full");
     else
     {
         if(rear == -1)
@@ -80,6 +33,26 @@ void add(int item)
         }
         else
         q[++rear] = item;
+    }
+}
+
+void push(int item)
+{
+    if(top == 19)
+        printf("Stack overflow ");
+    else
+        stack[++top] = item;
+}
+
+int pop()
+{
+    int k;
+    if(top == -1)
+        return(0);
+    else
+    {
+        k = stack[top--];
+        return(k);
     }
 }
 
@@ -133,22 +106,59 @@ void dfs(int s, int n)
             dfs(i, n);
 }
 
-void push(int item)
+void main()
 {
-    if(top == 19)
-        printf("Stack overflow ");
-    else
-        stack[++top] = item;
-}
-
-int pop()
-{
-    int k;
-    if(top == -1)
-        return(0);
-    else
+    int n, i, s, ch, j;
+    printf("\nEnter no. of vertices: ");
+    scanf("%d", &n);
+    for(i = 1; i <= n; i++)
     {
-        k = stack[top--];
-        return(k);
+        while(1)
+        {
+            printf("Enter where %d has nodes with ( 1-%d ) ( -1 to exit ): ", i, n);
+            scanf("%d", &j);
+            if(j == -1)
+                break;
+            else a[i][j] = 1;
+        }
+    }
+    
+    printf("\nThe Adjacency Matrix of the Graph is:\n\n");
+    for(i = 1; i <= n; i++)
+    {
+        for(j = 1; j <= n; j++)
+            printf(" %d", a[i][j]);
+        printf("\n");
+    }
+
+    while(1)
+    {
+        for(i = 1; i <= n; i++)
+            vis[i] = 0;
+
+        printf("\n\nMENU");
+        printf("\n1. B.F.S");
+        printf("\n2. D.F.S");
+        printf("\n3. Exit");
+        printf("\nEnter your choice: ");
+        scanf("%d", &ch);
+
+        if(ch == 3)
+            exit(0);
+        else
+        {
+            printf("\nEnter the source vertex: ");
+            scanf("%d", &s);
+        }
+
+        switch(ch)
+        {
+            case 1:
+                bfs(s, n);
+                break;
+            case 2:
+                dfs(s, n);
+                break;
+        }
     }
 }
