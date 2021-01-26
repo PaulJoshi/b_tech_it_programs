@@ -106,6 +106,17 @@ void dfs(int s, int n)
             dfs(i, n);
 }
 
+void display(int n)
+{
+    printf("\nThe Adjacency Matrix of the Graph is:\n\n");
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= n; j++)
+            printf(" %d", a[i][j]);
+        printf("\n");
+    }
+}
+
 void main()
 {
     int n, i, s, ch, j;
@@ -122,43 +133,34 @@ void main()
             else a[i][j] = 1;
         }
     }
-    
-    printf("\nThe Adjacency Matrix of the Graph is:\n\n");
-    for(i = 1; i <= n; i++)
-    {
-        for(j = 1; j <= n; j++)
-            printf(" %d", a[i][j]);
-        printf("\n");
-    }
+
+    printf("\nMenu\n1. B.F.S\n2. D.F.S\n3. Display\n4. Exit");
 
     while(1)
     {
         for(i = 1; i <= n; i++)
             vis[i] = 0;
 
-        printf("\n\nMENU");
-        printf("\n1. B.F.S");
-        printf("\n2. D.F.S");
-        printf("\n3. Exit");
-        printf("\nEnter your choice: ");
+        printf("\n\nEnter your choice: ");
         scanf("%d", &ch);
-
-        if(ch == 3)
-            exit(0);
-        else
-        {
-            printf("\nEnter the source vertex: ");
-            scanf("%d", &s);
-        }
 
         switch(ch)
         {
             case 1:
+                printf("\nEnter the source vertex: ");
+                scanf("%d", &s);
                 bfs(s, n);
                 break;
             case 2:
+                printf("\nEnter the source vertex: ");
+                scanf("%d", &s);
                 dfs(s, n);
                 break;
+            case 3:
+                display(n);
+                break;
+            case 4:
+                exit(0);
         }
     }
 }
