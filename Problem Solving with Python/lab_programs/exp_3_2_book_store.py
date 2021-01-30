@@ -13,7 +13,7 @@ def change_details(choice):
         if books.get(book, 0) < count :
             print("Not enough books")
             return
-        books.get(book, 0) - count
+        books[book] = books.get(book, 0) - count
 
 print('\n1. Add book\n2. Sell book\n3. Exit')
 

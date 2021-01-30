@@ -89,27 +89,23 @@ void quick_sort(int low, int high, int a[], int n, int d)
                 a[j] = temp;
             }
         }
-        display(a, n, d++);
         temp = a[j];
         a[j] = a[pivot];
         a[pivot] = temp;
+        display(a, n, d++);
         quick_sort(low, j-1, a, n, d);
-        quick_sort(j+1, high, a, n, d);
+        quick_sort(j+1, high, a, n, d++);
     }
 }
 
 void merge(int arr[], int l, int m, int r)
 {
-    int n1 = m - l + 1;
-    int n2 = r - m;
-    int L[20], R[20];
+    int n1 = m - l + 1, n2 = r - m, L[20], R[20];
     for (int i = 0; i < n1; i++)
         L[i] = arr[l + i];
     for (int j = 0; j < n2; j++)
         R[j] = arr[m + 1 + j];
-    int i = 0;
-    int j = 0;
-    int k = l;
+    int i = 0, j = 0, k = l;
     while (i < n1  &&  j < n2)
     {
         if (L[i] <= R[j])
