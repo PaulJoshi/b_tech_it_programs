@@ -1,3 +1,3 @@
-# b_tech_it_2nd_year_programs
+# B-Tech in IT
 
-Programs done in class during my 2nd year B-tech in Rajagiri School of Engineering and Technology
+Programs for B-tech in Information Technology at A.P.J. Abdul Kalam Technological University
