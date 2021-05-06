@@ -1,0 +1,1 @@
+// Construct a Java class to store some employee details and provide methods to set and get values.
