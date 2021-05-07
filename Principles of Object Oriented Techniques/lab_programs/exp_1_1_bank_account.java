@@ -13,10 +13,7 @@ class BankAccount {
        System.out.println("You have deposited:" + depoAmt);
     }
 
-    void withdraw() {
-       System.out.println("Enter amount to Withdraw: ");
-       Scanner input = new Scanner(System.in);
-       int withAmt = input.nextInt();
+    void withdraw(int withAmt) {
        if(withAmt < accountBal) {
            accountBal -= withAmt;
            System.out.println("You have withdrawn:" + withAmt);
@@ -48,7 +45,9 @@ class Bank {
                     object.deposit();
                     break;
                 case 2:
-                    object.withdraw();
+                    System.out.println("Enter amount to Withdraw: ");
+                    int withAmt = input.nextInt();
+                    object.withdraw(withAmt);
                     break;
                 case 3:
                     object.accBal();

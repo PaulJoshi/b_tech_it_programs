@@ -1,6 +1,12 @@
 class Box{
     double l, h, b;
 
+    Box() {
+        l = 1;
+        h = 2;
+        b = 3;
+    }
+
     void setDimension(double l1, double h1, double b1) {
         l = l1;
         h = h1;
