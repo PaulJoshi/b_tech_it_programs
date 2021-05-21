@@ -14,13 +14,13 @@ class BankAccount {
     }
 
     void withdraw(int withAmt) {
-       if(withAmt < accountBal) {
-           accountBal -= withAmt;
-           System.out.println("You have withdrawn:" + withAmt);
-       }
-       else {
-           System.out.println("Insufficent Balance");
-       }
+        if(withAmt < accountBal) {
+            accountBal -= withAmt;
+            System.out.println("You have withdrawn:" + withAmt);
+        }
+        else {
+            System.out.println("Insufficent Balance");
+        }
     }
 
     void accBal() {
