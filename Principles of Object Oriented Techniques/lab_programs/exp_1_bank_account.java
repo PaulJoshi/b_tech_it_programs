@@ -9,6 +9,7 @@ class BankAccount {
        System.out.println("Enter amount to Deposit: ");
        Scanner input = new Scanner(System.in);
        int depoAmt = input.nextInt();
+       input.close();
        accountBal += depoAmt;
        System.out.println("You have deposited:" + depoAmt);
     }
@@ -53,6 +54,7 @@ class Bank {
                     object.accBal();
                     break;
                 case 4:
+                    input.close();
                     System.exit(0);
                 default:
                     System.out.println("Error");
