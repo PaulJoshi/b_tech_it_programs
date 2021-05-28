@@ -18,8 +18,7 @@ class Rectangle {
 	}
 
 	void area() {
-		int area = l * b;
-		System.out.println("Area is: " + area + "\n");
+		System.out.println("Area is: " + l * b + "\n");
 	}
 }
 

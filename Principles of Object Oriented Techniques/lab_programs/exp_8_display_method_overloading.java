@@ -20,7 +20,7 @@ class Overload {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter an Integer: ");
+        System.out.println("\nEnter an Integer: ");
         int i = input.nextInt();
 
         System.out.println("Enter a String: ");

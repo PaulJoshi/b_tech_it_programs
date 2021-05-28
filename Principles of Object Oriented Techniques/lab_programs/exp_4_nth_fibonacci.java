@@ -5,8 +5,7 @@ Develop a Java program that uses both recursive and no recursive functions to pr
 class Fibonacci {
 	public static void main(String args[]) {
 		int n1 = 0, n2 = 1, n3 = 0;
-		System.out.println("\n" + n1);
-		System.out.println(n2);
+		System.out.println("\n" + n1 + "\n" + n2);
 
 		int x = Integer.parseInt(args[0]);
 
@@ -21,13 +20,14 @@ class Fibonacci {
 
 		// Recursion
 
-		int nth = 0;
+		int val = 0;
 		FibonacciHelper ob = new FibonacciHelper();
 		for(int i = 0; i < x; i++) {
-		    System.out.println(ob.fib(i));
+			val = ob.fib(i);
+		    System.out.println(val);
 		}
 
-		System.out.println("\n" + x + "th value of Fibonacci via recursion is: " + nth + "\n");
+		System.out.println("\n" + x + "th value of Fibonacci via recursion is: " + val + "\n");
 	}
 }
 
@@ -35,6 +35,6 @@ class FibonacciHelper {
 	int fib(int num) {
 		if(num <= 1)
 			return num;
-		return fib(num -1) + fib(num - 2);
+		return fib(num - 1) + fib(num - 2);
 	}
 }
