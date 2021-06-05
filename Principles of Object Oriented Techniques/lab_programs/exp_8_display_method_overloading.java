@@ -3,35 +3,33 @@
 import java.util.Scanner;
 
 class DisplayOverload {
-    DisplayOverload(int i) {
+    void display(int i) {
         System.out.println("Integer : " + i);
     }
 
-    DisplayOverload(String i) {
-        System.out.println("String : " + i);
+    void display(String s) {
+        System.out.println("String : " + s);
     }
 
-    DisplayOverload(Float i) {
-        System.out.println("Float : " + i);
+    void display(Float f) {
+        System.out.println("Float : " + f);
     }
-}
 
-class Overload {
     public static void main(String args[]) {
         Scanner input = new Scanner(System.in);
 
         System.out.println("\nEnter an Integer: ");
         int i = input.nextInt();
-
         System.out.println("Enter a String: ");
         String s = input.next();
-
         System.out.println("Enter a Float: ");
         Float f = input.nextFloat();
 
-        DisplayOverload displayInt = new DisplayOverload(i);
-        DisplayOverload displayStr = new DisplayOverload(s);
-        DisplayOverload displayFlo = new DisplayOverload(f);
+        DisplayOverload disp = new DisplayOverload();
+
+        disp.display(i);
+        disp.display(s);
+        disp.display(f);
 
         input.close();
     }

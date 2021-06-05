@@ -1,7 +1,6 @@
-/* Write a program that creates a class rectangle with instance variables for the length and the breadth.
-Initialize and display its variables. Use constructor overloading to initialize variables.
-First constructor is without argument (Set a default value here). Second constructor is with one argument
-(In this case make it a square) Third constructor is with two arguments. Also find the area of rectangle. */
+/* Write a program that creates a class rectangle with instance variables for the length and the breadth. Initialize and display its variables.
+Use constructor overloading to initialize variables. First constructor is without argument (Set a default value here). Second constructor is
+with one argument (In this case make it a square) Third constructor is with two arguments. Also find the area of rectangle. */
 
 import java.util.Scanner;
 
@@ -9,26 +8,24 @@ class Rectangle {
     int length, breadth;
 
     Rectangle() {
-        this.length = 3;
-        this.breadth = 4;
+        length = 3;
+        breadth = 4;
     }
 
     Rectangle(int x) {
-        this.length = x;
-        this.breadth = x;
+        length = x;
+        breadth = x;
     }
 
     Rectangle(int l, int b) {
-        this.length = l;
-        this.breadth = b;
+        length = l;
+        breadth = b;
     }
 
     int area() {
-        return this.length * this.breadth;
+        return length * breadth;
     }
-}
 
-class RectangleArea {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
