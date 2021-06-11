@@ -50,6 +50,7 @@ class Stack {
                     stackOb1.display();
                     break;
                 case 4:
+                    input.close();
                     System.exit(0);
                 default:
                     System.out.println("Error");

@@ -19,12 +19,12 @@ class Rectangle extends Shape {
 }
 
 class Triangle extends Shape {
-	Triangle(int m,int n) {
+	Triangle(int m, int n) {
 		a = m;
 		b = n;
 	}
 
-	void printArea(){
+	void printArea() {
 		double area = 0.5 * a * b;
 		System.out.println("Area of the Triangle is  : " + area);
 	}
@@ -46,6 +46,7 @@ class AbstractDemo {
 		Rectangle ob1 = new Rectangle(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 		Triangle ob2 = new Triangle(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
 		Circle ob3 = new Circle(Integer.parseInt(args[0]));
+		
 		ob1.printArea();
 		ob2.printArea();
 		ob3.printArea();
