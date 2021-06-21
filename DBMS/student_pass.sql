@@ -1,0 +1,57 @@
+-- Write a PL/SQL block to insert the students who have passed into the table ‘pass’ and failed into the table’ fail’.
+-- Student table contains fields reg-no., mark1, mark2, mark3, name.
+-- Conditions for passing: 1) Total >= 120 2) mark1, mark2, mark3 >=35
+
+CREATE TABLE STUDENT(REGNO NUMBER, NAME VARCHAR2(10), M1 NUMBER, M2 NUMBER, M3 NUMBER);
+CREATE TABLE PASS(REGNO NUMBER, NAME VARCHAR2(10), M1 NUMBER, M2 NUMBER, M3 NUMBER);
+CREATE TABLE FAIL(REGNO NUMBER, NAME VARCHAR2(10), M1 NUMBER, M2 NUMBER, M3 NUMBER);
+
+INSERT INTO STUDENT VALUES(1, 'ANU', 36, 37, 38);
+INSERT INTO STUDENT VALUES(2, 'MANU', 32, 36, 40);
+INSERT INTO STUDENT VALUES(3, 'ALEX', 30, 31, 37);
+INSERT INTO STUDENT VALUES(4, 'ARUN', 41, 42, 40);
+INSERT INTO STUDENT VALUES(5, 'MATHEW', 40, 38, 48);
+
+-- PL/SQL BLOCK
+
+DECLARE
+CURSOR C IS SELECT * FROM STUDENT;
+S C%ROWTYPE;
+TOTAL NUMBER(30);
+
+BEGIN
+    TOTAL := 0;
+    OPEN C;
+    LOOP
+        FETCH C INTO S;
+        EXIT WHEN C%NOTFOUND;
+        TOTAL := S.M1 + S.M2 + S.M3;
+        IF (TOTAL >= 120 AND S.M1 >= 35 AND S.M2 >= 35 AND S.M3 >= 35) THEN
+            INSERT INTO PASS VALUES(S.REGNO, S.NAME, S.M1, S.M2, S.M3);
+        ELSE
+            INSERT INTO FAIL VALUES(S.REGNO, S.NAME, S.M1, S.M2, S.M3);
+        END IF;
+    END LOOP;
+    CLOSE C;
+END;
+/
+
+-- OR
+
+DECLARE
+CURSOR C IS SELECT * FROM STUDENT;
+TOTAL NUMBER(3);
+
+BEGIN
+    TOTAL := 0;
+    FOR S IN C
+    LOOP
+        TOTAL := S.M1 + S.M2 + S.M3;
+        IF (TOTAL >= 120 AND S.M1 >= 35 AND S.M2 >= 35 AND S.M3 >= 35) THEN
+            INSERT INTO PASS VALUES (S.REGNO, S.NAME, S.M1, S.M2, S.M3);
+        ELSE
+            INSERT INTO FAIL VALUES(S.REGNO, S.NAME, S.M1, S.M2, S.M3);
+        END IF;
+    END LOOP;
+END;
+/

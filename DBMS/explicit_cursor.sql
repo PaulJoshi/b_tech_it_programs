@@ -4,14 +4,37 @@
 
 -- display the name and gender of the student whose mark is above 40
 
-declare
-    cursor c1 is select * from stud where marks>40;
-    r1 stud%rowtype;
-begin
-    open c1;
-    fetch c1 into r1;
-    dbms_output.put_line(r1.name);
-    dbms_output.put_line(r1.gender);
-    close c1;
-end;
+DECLARE
+    CURSOR C1 IS SELECT * FROM STUD WHERE MARKS>40;
+    R1 STUD%ROWTYPE;
+BEGIN
+    OPEN C1;
+    FETCH C1 INTO R1;
+    DBMS_OUTPUT.PUT_LINE(R1.NAME);
+    DBMS_OUTPUT.PUT_LINE(R1.GENDER);
+    CLOSE C1;
+END;
 /
+
+-- MULTIPLE ROWS
+
+DECLARE
+    CURSOR T_TUTORIALS IS
+    SELECT CODE, SUBJECT, TEACHER FROM TUTOR;
+    
+    T_CODE TUTOR.CODE%TYPE;
+    T_SUBJECT TUTOR.SUBJECT%TYPE;
+    T_SUBJECT TUTOR.TEACHER%TYPE;
+
+BEGIN
+    OPEN T_TUTORIALS;
+
+    LOOP
+        FETCH T_TUTORIALS INTO T_CODE, T_SUBJECT, T_TEACHER;
+        EXIT WHEN T_TUTORIALS%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE('CODE IS: ' || T_CODE || 'SUBJECT IS: ' || ' TEACHER IS: ' || T_TEACHER);
+    END LOOP;
+    CLOSE T_TUTORIALS;
+END;
+;
