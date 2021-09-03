@@ -30,8 +30,8 @@ class StackUnderflow extends Exception {
 }
 
 class StackClass {
-    int top = -1, size = 10;
-    int[] stackArray = new int[size];  
+    int top = -1, size = 5;
+    int[] stackArray = new int[size];
 
     void push(int s) throws StackOverflow {
         if(top >= size - 1) {

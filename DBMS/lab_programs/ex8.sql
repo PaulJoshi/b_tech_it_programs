@@ -1,5 +1,5 @@
+-- 1. Write a PL/SQL code block to find factorial of a number.
 
-1.
 declare 
 n number;
 r number;
@@ -16,7 +16,8 @@ end;
 /
 
 
-2.
+-- 2. Write a pl/sql program to check whether a given 3-digit number is Armstrong or not.
+
 declare 
 n number;
 temp number;
@@ -39,7 +40,8 @@ end;
 /
 
 
-3.
+-- 3. Write a pl/sql program to display the reverse of a string.
+
 declare 
 n VARCHAR2(20);
 f VARCHAR2(20);
@@ -56,7 +58,8 @@ end;
 /
 
 
-4.
+-- 4. Write a pl/sql program to check whether a given number is palindrome or not.Write a pl/sql program to check whether a given number is palindrome or not.
+
 declare 
 n number;
 f number;
@@ -79,7 +82,10 @@ end;
 /
 
 
-5.
+-- 5. Write a PL/SQL code block to calculate the area of a circle for a value of radius varying
+-- from 5 to 15. Store the radius and the corresponding values of calculated area in an
+-- empty table named areas, consisting of two columns radius & area.
+
 CREATE TABLE AREA(RADIUS NUMBER, AREA NUMBER);
 declare 
 area number;
@@ -93,7 +99,10 @@ begin
 end;
 /
 
-6.
+
+-- 6. Write a PL/SQL code block that will accept an account number from the user, check if the
+-- users balance is less than minimum balance, only then deduct Rs.100/ -from the balance.
+
 CREATE TABLE BANKDETAILS(
     Name VARCHAR2(25),
     ACCOUNT VARCHAR2(20),
@@ -123,7 +132,17 @@ END;
 /
 
 
-7.
+-- 7. Write a PL/SQL program to accept the present reading, past reading, consumer no. and
+-- generate the electricity bill of the consumer. The charge is calculated as follows:
+--
+-- | Unit Consumed  | Rate
+-- + -------------- + -----------------------------------------------------------
+-- | < 20           | Rs. 30
+-- | 20-100         | 50 ps/unit
+-- | 101-300        | 50 ps/unit for 1st 100 & 75 ps/unit for the rest
+-- | 301-500        | 50 ps/unit for the 1st 100 & 75 ps/unit for the next 200 & 1.5 rs/unit for the rest
+-- | > 500          | 2.25 rs/unit for each unit above 500
+
 DECLARE 
 pre number(8);
 past number(5); 
