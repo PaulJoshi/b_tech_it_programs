@@ -1,4 +1,4 @@
-// Implementation of First Fit algorithm without sorting
+// Implementation of First Fit algorithm using sorting
 
 #include <stdio.h>
 
@@ -6,7 +6,8 @@ void main()
 {
 	int bsize[10], psize[10], flag[10], alloc[10], b, p, i, j, temp;
 	for(i = 0; i < 10; i++)
-	{	flag[i] = 0;
+	{	
+		flag[i] = 0;
 		alloc[i] = -1;
 	}
 	printf("Enter the no of blocks: ");
@@ -14,7 +15,8 @@ void main()
 
 	printf("\nEnter the size of each block:\n");
 	for(i = 0; i < b; i++)
-	{	printf("Block no %d : ", i + 1);
+	{	
+		printf("Block no %d : ", i + 1);
 		scanf("%d", &bsize[i]);
 	}
 
@@ -36,12 +38,14 @@ void main()
 	scanf("%d", &p);
 	printf("\nEnter the size of each process:\n");
 	for(i = 0; i < p; i++)
-	{	printf("Process no %d : ", i + 1);
+	{	
+		printf("Process no %d : ", i + 1);
 		scanf("%d", &psize[i]);
 	}
 
 	for(i = 0; i < p; i++)
-	{	for(j = 0; j < b; j++)
+	{	
+		for(j = 0; j < b; j++)
 		{
 			if(flag[j] == 0 && bsize[j] >= psize[i])
 			{	flag[j] = 1;
@@ -53,7 +57,8 @@ void main()
 
 	printf("\nBlock no\tSize\t\tProcess no\tSize");
 	for(i = 0; i < b; i++)
-	{	printf("\n%d\t\t%d\t\t", i + 1, bsize[i]);
+	{	
+		printf("\n%d\t\t%d\t\t", i + 1, bsize[i]);
 		if(flag[i] == 1)
 			printf("%d\t\t%d", alloc[i] + 1, psize[alloc[i]]);
 		else
