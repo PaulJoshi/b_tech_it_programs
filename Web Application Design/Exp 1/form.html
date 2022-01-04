@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>Registration Form</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<form action="action_page.php">
+			<div class="container">
+				<h1>Registration Form</h1>
+				<hr>
+				
+				<div class="field">
+				<label for="userid">User ID:</label>
+				<input type="text" placeholder="Enter User ID" name="userid" id="userid" minlength="5" maxlength="12" required>
+				</div>
+				
+				<div class="field">
+				<label for="password">Password:</label>
+				<input type="password" placeholder="Enter Password" name="password" id="password" minlength="7" maxlength="12" required>
+				</div>
+				
+				<div class="field">
+				<label for="name">Name:</label>
+				<input type="text" placeholder="Enter Name" name="name" id="name" required>
+				</div>
+				
+				<div class="field">
+				<label for="address">Address:</label>
+				<input type="text" placeholder="Enter Address" name="address" id="address">
+				</div>
+				
+				<div class="field">
+				<label for="country">Country:</label>
+				<select name="country" id="country">
+					<option value="india">India</option>
+					<option value="unitedstatesofamerica">United States of America</option>
+					<option value="bangladesh">Bangladesh</option>
+					<option value="pakistan">Pakistan</option>
+				</select>
+				</div>
+				
+				<div class="field">
+				<label for="zipcode">ZIP Code:</label>
+				<input type="number" placeholder="Enter ZIP Code" name="zipcode" id="zipcode" required>
+				</div>
+				
+				<div class="field">
+				<label for="email">Email:</label>
+				<input type="text" placeholder="Enter Email" name="email" id="email" required>
+				</div>
+
+				<div class="field">
+					<label for="sex">Sex</label>
+					<input type="radio" id="m" name="sex" value="male">
+					<label for="sex">Male</label>
+					<input type="radio" id="f" name="sex" value="female">
+					<label for="sex">Female</label><br>
+				</div>
+
+				<div class="field">
+					<label for="language">Language:</label>
+					<input type="checkbox" id="english" name="language" value="english">
+					<label for="language"> English</label>
+					<input type="checkbox" id="nonenglish" name="language" value="nonenglish">
+					<label for="language"> Non-English</label><br>
+				</div>
+
+				<div class="field">
+				<label for="about">About:</label>
+				<textarea type="text" placeholder="Enter about yourself" name="about" id="about" required></textarea>
+				</div>
+				<hr>
+				
+				<button type="submit" class="registerbtn">Submit</button>
+			</div>
+		</form>
+	</body>
+</html>

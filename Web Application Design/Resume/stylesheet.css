@@ -1,0 +1,46 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none; /* no underline */
+}
+
+a:hover {
+	text-decoration: underline; 
+}
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+    background-color: coral;
+    padding: 10px 30px;
+    margin: 0;
+}
+
+.paul {
+	font-weight: bold;
+}
+
+.joshi {
+	font-weight: lighter;
+}
+
+.header h1 {
+	padding: 0;
+    margin: 0;
+}
+
+.header-list {
+	color: white;
+	font-size: small;
+	list-style-type: none;
+	padding-right: 20px;
+}
+
+h2 {
+	color: coral;
+}
