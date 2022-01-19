@@ -1,0 +1,97 @@
+table, th, td {
+	border: 3px;
+	border-collapse: collapse;
+	text-align: center;
+	border-style: solid;
+	border-color:green;
+}
+
+.sidenav {
+	height: 100%;
+	width: 250px;
+	margin: 8px;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	border-radius: 15px;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+}
+
+.sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.main {
+	font-size: 20px;
+	padding: 0px 15px;
+	border-radius: 15px;
+}
+
+.main img {
+	width: 100%;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 15px;
+	object-position: 100% 65%;
+}
+
+body{
+	margin-left: 266px;
+	background-color:#D3D3D3 ;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("https://t3.ftcdn.net/jpg/03/77/85/04/360_F_377850455_Gk0rRBzegH6YX9SZK9YbgyYyLwrVb9zi.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom right;
+	background-size: 200px 200px;
+}
+
+h1 {
+	text-align: center;
+	font-family: Georgia, serif; 
+	color: blue;
+	padding: 15px 10px;
+	border-radius: 15px;
+	background-color: red;
+	font-style: bold;
+	font-size: 24px;
+}
+
+h2 {
+	font-family: Georgia, serif; 
+	color: #8B0000;
+	font-size: 18px;
+}
+
+p {
+	margin: 10px 0px;
+}
+
+div {
+	background-color: #E5E4E2;
+	overflow: auto;
+}
+
+hr.solid {
+	border-top: 3px solid #bbb;
+	border-color: #8B0000;
+}
+footer {
+    text-align: left;
+	color: white;
+	padding: 10px;
+	margin: 0px 0px 15px;
+	background-color: #8B0000;
+	border-radius: 15px;
+}

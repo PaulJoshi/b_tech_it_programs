@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<link rel = "stylesheet" href="style.css">
+		<title>Bubble Sort</title>
+		<script>
+			var arr1 = new Array();
+
+			function arraySize() {
+				var size;
+
+				size = prompt("Enter Size of Array: ");
+				if (size == null) {
+					alert("No Value");
+				} else {
+					for(var i = 0; i < size; i++) {
+						let x = prompt('Enter the Element ' + (i + 1));
+						arr1.push(x);
+					}
+				}
+
+				document.getElementById("object1").innerHTML = "List before sorting: "
+				document.getElementById("object2").innerHTML = arr1;
+				bubbleSort()
+			}
+
+			function bubbleSort() {
+				for(var i = 0; i < arr1.length; i++) {
+					for(var j = 0; j < ( arr1.length - i - 1 ); j++) {
+						if(arr1[j] > arr1[j + 1]) {
+							var temp = arr1[j]
+							arr1[j] = arr1[j + 1]
+							arr1[j + 1] = temp
+						}
+					}
+				}
+
+				document.getElementById("object3").innerHTML = "Sorted List: "
+				document.getElementById("object4").innerHTML = arr1;
+			}
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>Bubble Sort</h1>
+		</header>
+
+		<button onclick="arraySize()">Click to Sort</button>
+
+		<p id="object1"></p>
+		<p id="object2"></p>
+		<p id="object3"></p>
+		<p id="object4"></p>
+	</body>
+</html>
