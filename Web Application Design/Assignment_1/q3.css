@@ -1,0 +1,19 @@
+.navbar {
+    overflow: hidden;
+    background-color: #1b2223;
+    border: 5px solid #0ef6cc;
+    border-radius: 10px;
+}
+
+.navbar a {
+    float: left;
+    font-size: 26px;
+    color: white;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #3a4f50;
+}

@@ -7,6 +7,7 @@
 
 .nav a {
 	flex-grow: 1;
+	border-radius: 10px;
 	border: 2px solid black;
 	margin: 16px;
 	padding: 16px;
@@ -20,6 +21,7 @@
 }
 
 .navbar li {
+	border-radius: 10px;
 	background-color: black;
 	padding: 16px 40px;
 	margin: 0px 10px;
@@ -49,6 +51,7 @@
 	width: 100%;
 	margin: 1em;
 	padding: 1em;
+	border-radius: 10px;
 	background-color: #dedede;
 }
 
@@ -56,6 +59,8 @@
 	text-align: center;
 	margin: 1em;
 	padding: 1em;
+	border-radius: 10px;
+	border-radius: 10px;
 	background-color: white;
 }
 
@@ -63,11 +68,13 @@
 	width: 100%;
 	margin: 1em;
 	padding: 1em;
+	border-radius: 10px;
 	background-color: #dedede;
 }
 
 .sidebar-box {
 	margin: 1em;
 	padding: 1em;
+	border-radius: 10px;
 	background-color: white;
 }
