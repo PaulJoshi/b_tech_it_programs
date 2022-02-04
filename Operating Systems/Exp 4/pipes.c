@@ -21,18 +21,18 @@ void main()
 	{
 		printf("Child received data\n");
 		n = read(fd[0], buffer, 100);
-		length = strlen(str);
+		length = strlen(buffer);
 		for(i = 0; i < length; i++)
         {
-			if(str[i] != str[length - i - 1])
+			if(buffer[i] != buffer[length - i - 1])
             {
 				flag = 1;
 				break;
 			}
 		}
 		if(flag)
-			printf("\n %s is not a palindrome \n", str);
+			printf("\n %s is not a palindrome \n", buffer);
 		else
-			printf("\n %s is a palindrome \n", str);
+			printf("\n %s is a palindrome \n", buffer);
 	}
 }
