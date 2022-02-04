@@ -1,0 +1,46 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', sans-serif;
+}
+
+.container {
+	margin: 20px 30%;
+	padding: 20px;
+	background: linear-gradient(to right, #048cb9, #00b4db);
+	border-radius: 10px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+
+h1 {
+	margin-bottom: 15px;
+}
+
+form input, select {
+	width: 100%;
+	margin: 4px 0px 12px;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+span {
+	border-radius: 5px;
+	padding: 5px;
+	color: red;
+}
+
+.buttons input {
+	width: auto;
+	margin: 12px;
+}
+
+.submit {
+	margin-top: 15px;
+	padding: 8px;
+}
+
+.submit:hover {
+	box-shadow: 0 3px 3px rgba(0,0,0,0.4);
+}
