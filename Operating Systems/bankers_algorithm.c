@@ -35,13 +35,13 @@ void main()
 	}
 
   	printf("\nIntial available\n");
-    c = 'A';
-    for(j = 0; j < m; ++j)
-    {
-    	printf("at %c resource = ", c);
-    	scanf("%d", &avail[j]);
-    	++c;
-    }
+	c = 'A';
+	for(j = 0; j < m; ++j)
+	{
+		printf("at %c resource = ", c);
+		scanf("%d", &avail[j]);
+		++c;
+	}
 
 	//display matrices
 	printf("\nAllocation Matrix:");
