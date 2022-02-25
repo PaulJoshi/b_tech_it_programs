@@ -101,4 +101,4 @@ function Validatelan()
         document.getElementById('lan_error').innerHTML = " (Please Select a Language)";
         return false;  
     }  
-}  
+}
