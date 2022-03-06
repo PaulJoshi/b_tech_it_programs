@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Online Quiz</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="app.js"></script>
+	</head>
+	<body>
+		<form name="form" onsubmit="validate()" target="_blank">
+			<h1>Quiz</h1>
+			<hr>
+				
+			<label for="q1">1. Who is the director of the 2014 blockbuster 'Interstellar'?</label><br>
+			<input id="q1" name="q1" type="radio">Darren Aaronofski</input>
+			<input id="q1" name="q1" type="radio">Christopher Nolan</input>
+			<p id="q1-ver"></p>
+			<br>
+			
+			<label for="q2">2. Who composed the score for 'Man of Steel'?</label><br>
+			<input id="q2" name="q2" type="radio">Hans Zimmer</input>
+			<input id="q2" name="q2" type="radio">John Powell</input>
+			<p id="q2-ver"></p>
+			<br>
+			
+			<label for="q3">3. Which legendary scriptwriter scripted the movie 'The Social Network'?</label><br>
+			<input id="q3" name="q3" type="radio">Aaron Sorkin</input>
+			<input id="q3" name="q3" type="radio">Sean Parker</input>
+			<p id="q3-ver"></p>
+			<br>
+			
+			<label for="q4">4. Who voice acted 'Woody' in 'Toy Story'?</label><br>
+			<input id="q4" name="q4" type="radio">Harrison Ford</input>
+			<input id="q4" name="q4" type="radio">Tom Hanks</input>
+			<p id="q4-ver"></p>
+			<br>
+			
+			<input type="submit" class="submit"></input>
+		<form>
+		<div class="scoreboard">
+			<h2 id="score-header"></h2>
+			<p id="score"></p>
+		</div>
+	</body>
+</html>
