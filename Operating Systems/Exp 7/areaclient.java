@@ -2,7 +2,7 @@ import java.net.*;
 import java.io.*;
 
 class areaclient {
-	public static void main(String args[])throws Exception {
+	public static void main(String args[]) throws Exception {
 		Socket s = new Socket("localhost", 4000);
 
 		BufferedReader br2 = new BufferedReader(new InputStreamReader(s.getInputStream()));
@@ -13,10 +13,10 @@ class areaclient {
 
 		while(true) {
 			System.out.println("Enter the radius of circle: ");
-			if(str.equals("exit")) break;
 			str = br1.readLine();
+			if(str.equals("exit")) break;
 			pw.println(str);
-    			str2 = br2.readLine();
+    		str2 = br2.readLine();
 			System.out.println("Area computed by Server: " + str2);
 		}
 
@@ -26,4 +26,3 @@ class areaclient {
 		s.close();
 	}
 }
-

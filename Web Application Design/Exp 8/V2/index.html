@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Registration Form</title>
+		<script src="app.js"></script>
+	</head>
+	<body>
+        <h1>Registration Form</h1>
+		<form id="myForm" name="registration" onSubmit="formvalidation();">
+			<div>
+				<label for="userid">User ID:</label>
+            	<input type="text" id="userid"  placeholder="must be between 5 and 12">
+    		</div>
+    		<div>
+				<label for="passid">Password:</label>
+    			<input type="text" id="passid"  placeholder="must be between 7 and 12">
+    		</div>
+    		<div>
+				<label for="username">Username:</label>
+    			<input type="text" id="username"  placeholder="must be alphabets">
+    		</div>
+    		<div>
+				<label for="address">address:</label>
+    			<input type="text" id="address"  placeholder="can contain alphabets and numbers">
+    		</div>
+    		<div>
+    			<label for="country">country:</label>
+    			<select id="country" name="country">
+    				<option value="Default">Default</option>
+    				<option value="usa">USA</option>
+    				<option value="uae">UAE</option>
+    			</select>
+    		</div>
+    		<div>
+				<label for="zip">zip:</label>
+    			<input type="text" id="zip" placeholder="must be all numbers">
+    		</div>
+    		<div>
+				<label for="email">Email</label>
+    			<input type="email" id="email">
+    		</div>
+    		<div>
+				<input type="checkbox" id="eng" value="english">
+        		<label for="english">English</label>
+        	</div>
+        	<br>
+        	<div>
+				<input type="checkbox" id="noneng" value="nonenglish">
+        		<label for="nonenglish">Non-english</label>
+        	</div>
+        	<br>
+        	<div>
+				<input type="radio" id="msex" name="fav_language" value="msex">
+        		<label for="msex">Male</label>
+        	</div>
+        	<br>
+        	<div>
+				<input type="radio" id="fsex" name="fav_language" value="fsex">
+        		<label for="fsex">Female</label>
+        	</div>
+        	<br>
+        	<textarea name="message" rows="5" cols="20">Optional Details</textarea>
+        	<input type="submit" value="Submit">
+      </form>
+   </body>
+</html>

@@ -2,7 +2,7 @@ import java.net.*;
 import java.io.*;
 
 class areaserver {  
-	public static void main(String args[])throws Exception {
+	public static void main(String args[]) throws Exception {
 		ServerSocket ss = new ServerSocket(4000);
 		Socket s = ss.accept();
 
@@ -21,7 +21,7 @@ class areaserver {
 
 		br.close();
 		pw.close();
-   	 s.close();
-   	 ss.close();
+   		s.close();
+   		ss.close();
     }
 }

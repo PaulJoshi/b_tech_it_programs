@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration Form</title>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            form {
+                width: 50%;
+                margin: auto;
+            }
+            input, select {
+                width: 100%;
+            }
+            #male, #female, #english, #non-english {
+                width: 20px;
+            }
+        </style>
+        <script>
+            function validateForm() {
+
+                //check User ID
+                var userid = document.form.userid.value;
+                if(!userid) {
+                    alert("Enter User ID");
+                    return false;
+                }
+
+                //check Password
+                var password = document.form.password.value;
+                if(!password || password.length < 5 || password.length > 12) {
+                    alert("Enter Password\nPassword must be between 5 and 12 characters");
+                    return false;
+                }
+
+                //check User Name
+                var name = document.form.name.value;
+                var alphabet = /^[A-Za-z][A-Za-z ]+$/;
+                if(!name.match(alphabet)) {
+                    alert("Enter your Name\nname must begin with an alphabet");
+                    return false;
+                }
+
+                //check Address
+                var address = document.form.address.value;
+                var alphabet = /^[A-Za-z0-9][A-Za-z0-9 ]+$/;
+                if(!address.match(alphabet)) {
+                    alert("Enter your address\nAddress cannot begin with a space");
+                    return false;
+                }
+
+                //check Country
+                var country = document.form.country.value;
+                if(country == "Select") {
+                    alert("Enter your Country");
+                    return false;
+                }
+
+                //check Zipcode
+                var zipcode = document.form.zipcode.value;
+                var number = /^[0-9]+$/;
+                if(!zipcode.match(number)) {
+                    alert("Enter your zipcode\nZipcode must be a number");
+                    return false;
+                }
+
+                //check Mobile Number
+                var mobNumber = document.form.mobNumber.value;
+                if(!mobNumber.match(number)) {
+                    alert("Enter your Mobile Number\nMobile Number must be a number");
+                    return false;
+                }
+
+                //check Email
+                var email = document.form.email.value;
+                var emailFormat = /^[A-Za-z0-9\.-]+@[A-Za-z]+\.[A-Za-z]+$/;
+                if(!email.match(emailFormat)) {
+                    alert("Enter your email\nEmail must contain an '@'");
+                    return false;
+                }
+
+                //check Gender
+                if(!form.sex[0].checked && !form.sex[1].checked) {
+                    alert("Select gender");
+                    return false;
+                }
+
+                //check Language
+                if(!form.language[0].checked && !form.language[1].checked) {
+                    alert("Select any language");
+                    return false;
+                }
+
+                else {
+                    alert("Submit Successful");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <form name="form" onSubmit="return validateForm();">
+            <label for="userid">User ID*</label>
+            <input name="userid" type="text" id="userid">
+
+            <label for="password">Password*</label>
+            <input name="password" type="password" id="password">
+
+            <label for="name">Name*</label>
+            <input name="name" type="text" id="name">
+
+            <label for="address">Address</label>
+            <input name="address" type="text" id="address">
+
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                <option value="Select" selected>Select</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+            </select>
+
+            <label for="zipcode">Zipcode</label>
+            <input name="zipcode" type="number" id="zipcode">
+
+            <label for="mobNumber">Mobile Number</label>
+            <input name="mobNumber" type="tel" id="mobNumber">
+            
+            <label for="email">Email</label>
+            <input name="email" type="email" id="email">
+
+            <label>Gender</label><br>
+            <label for="male">Male</label>
+            <input name="sex" id="male" type="radio" value="male">
+            <label for="female">Female</label>
+            <input name="sex" id="female" type="radio" value="female"><br>
+
+            <label>Language</label><br>
+            <label for="english">English</label>
+            <input name="language" id="english" type="checkbox" value="english">
+            <label for="non-english">Non-English</label>
+            <input name="language" id="non-english" type="checkbox" value="non-english"><br>
+
+            <input type="submit">
+            <input type="reset">
+            <input type="button" value="Back" onclick="history.back()">
+        </form>
+    </body>
+</html>

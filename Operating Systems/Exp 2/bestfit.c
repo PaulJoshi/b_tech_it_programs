@@ -1,4 +1,4 @@
-// Implementation of First Fit algorithm using sorting
+// Implementation of Best Fit algorithm using sorting
 
 #include <stdio.h>
 
@@ -21,15 +21,15 @@ void main()
 	}
 
 	//sorting (ascending)
-	for (i = 0 ; i < b - 1; i++)
+	for (i = 0; i < b - 1; i++)
 	{
-		for(j = 0 ; j < b - i - 1; j++)
+		for(j = 0; j < b - 1 - i; j++)
 		{
 			if(bsize[j] > bsize[j + 1])
 			{
 				temp = bsize[j];
 				bsize[j] = bsize[j + 1];
-				bsize[j+1] = temp;
+				bsize[j + 1] = temp;
 			}
 		}
 	}
@@ -48,7 +48,8 @@ void main()
 		for(j = 0; j < b; j++)
 		{
 			if(flag[j] == 0 && bsize[j] >= psize[i])
-			{	flag[j] = 1;
+			{	
+				flag[j] = 1;
 				alloc[j] = i;
 				break;
 			}

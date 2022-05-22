@@ -1,3 +1,5 @@
+// Implementation of First Fit algorithm using sorting
+
 #include <stdio.h>
 
 void main()

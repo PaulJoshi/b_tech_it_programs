@@ -31,4 +31,6 @@ function validate() {
 	
 	document.getElementById('score-header').innerHTML = 'YOUR SCORE';
 	document.getElementById('score').innerHTML = 'Congratulations, you scored: ' + score;
+
+	return false;
 }

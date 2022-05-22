@@ -5,7 +5,7 @@ class EchoClient {
 	public static void main(String args[]) throws Exception {
 	    String sockin;
 	    try {
-	        Socket csock = new Socket(InetAddress.getLocalHost(),2000);
+	        Socket csock = new Socket(InetAddress.getLocalHost(), 2000);
 	        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	        BufferedReader br_sock = new BufferedReader(new InputStreamReader(csock.getInputStream()));
 	        PrintStream ps = new PrintStream(csock.getOutputStream());

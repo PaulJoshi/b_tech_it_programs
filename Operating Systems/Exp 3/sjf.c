@@ -48,7 +48,7 @@ void btSort()
 
 void main()
 {
-	int z, i, pct, sbt, loc, j, f, flag = 0;
+	int i, pct, sbt, loc, j, f, flag = 0;
 
 	printf("Enter the number of processes: ");
 	scanf("%d", &n);
@@ -78,8 +78,8 @@ void main()
 	for(i = 1; i < n; i++)
 	{
 		pct = p[i - 1].ct;
-		sbt= 100;
-		f= 0;
+		sbt = 100;
+		f = 0;
 		for(j = i; j < n; j++)
 		{
 			if(p[j].at <= pct && p[j].bt < sbt)
@@ -100,7 +100,7 @@ void main()
 		if(f == 1)
 			p[loc].ct = pct + p[loc].bt;
 		else
-			p[loc].ct = p[loc].at+ p[loc].bt;
+			p[loc].ct = p[loc].at + p[loc].bt;
 		p[loc].tat = p[loc].ct - p[loc].at;
 		p[loc].wt = p[loc].tat - p[loc].bt;
 		swap(loc, i);

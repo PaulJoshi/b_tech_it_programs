@@ -1,16 +1,23 @@
-import java.io.*; public class Goback {
+import java.io.*;
+
+public class Goback {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(newInputStreamReader(System.in));
-        System.out.println("Please enter the Window Size:");int window = Integer.parseInt(br.readLine());
-        boolean loop = true;int sent = 0;
+        System.out.println("Please enter the Window Size:");
+        int window = Integer.parseInt(br.readLine());
+        boolean loop = true;
+        int sent = 0;
+
         while(loop) {
             for(int i = 0; i < window; i++) {
-                System.out.println("Frame " + sent + " has been transmitted.");sent++;
+                System.out.println("Frame " + sent + " has been transmitted.");
+                sent++;
                 if(sent == window)
                     break;
             }
-            System.out.println("Please enter the last Acknowledgement received.");int ack =
-            Integer.parseInt(br.readLine());
+            
+            System.out.println("Please enter the last Acknowledgement received.");
+            int ack = Integer.parseInt(br.readLine());
             if(ack == window)
                 loop = false;
             else

@@ -10,7 +10,7 @@ class EchoServer {
         try {
             svrsoc = new ServerSocket(2000);
             soc = svrsoc.accept();
-            br = new BufferedReader (new InputStreamReader(soc.getInputStream()));
+            br = new BufferedReader(new InputStreamReader(soc.getInputStream()));
             PrintStream ps = new PrintStream(soc.getOutputStream());
             System.out.println("Connected for echo:");
             while((echoin=br.readLine()) != null) {
