@@ -5,15 +5,15 @@
 x <- list("Pramitha", "Peter", "Riya", "Roshin", "Paul")
 
 if ("Riya" %in% x == TRUE) {
-  print("Exists")
+	print("Exists")
 } else {
-  print("Does not exist")
+	print("Does not exist")
 }
 
 if ("Rahul" %in% x == TRUE) {
-  print("Exists")
+	print("Exists")
 } else {
-  print("Does not exist")
+	print("Does not exist")
 }
 
 x <- append(x, "Sandra")

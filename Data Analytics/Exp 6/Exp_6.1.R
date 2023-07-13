@@ -6,7 +6,7 @@ library(syuzhet)
 #the columns that contain characters (i.e., text) are coerced (=converted)
 #into the factor data type. 
 
-df1 <- read.csv("C:/Users/Online/Desktop/Paul Joshi/AmazonReview.csv", stringsAsFactors=FALSE)
+df1 <- read.csv("C:/Rajagiri/b_tech_it_programs/Data Analytics/Exp 6/AmazonReview.csv", stringsAsFactors=FALSE)
 review1 <- as.character(df1$Content)
 
 #obtain sentiment scores

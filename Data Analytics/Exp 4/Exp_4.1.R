@@ -2,28 +2,42 @@
 data(iris)
 summary(iris)
 
-#histogram
-hist(iris$Sepal.Length,xlab = "Petal width",
-     ylab = "Sepal width",
-     main = "Width data")
 
-#boxplot
+# Histogram
 
-boxplot(Sepal.Width ~ Petal.Width, data = iris,
-        xlab = "Petal width",
-        ylab = "Sepal width",
-        main = "Width data")
+hist(
+	iris$Sepal.Length,
+	xlab = "Sepal Length",
+	ylab = "Frequency",
+	main = "Width data"
+)
 
 
-#barplot
+# Boxplot
 
-a<-iris$Sepal.Length
-barplot(a,xlab = "Petal width",
-        ylab = "Sepal width",
-        main = "Width data")
+boxplot(
+	Sepal.Width ~ Petal.Width,
+	data = iris,
+	xlab = "Petal width",
+	ylab = "Sepal width",
+	main = "Width data"
+)
 
-#scatter plot
 
-plot(a,xlab = "Petal width",
-     ylab = "Sepal width",
-     main = "Width data")
+# Barplot
+
+barplot(
+	iris$Sepal.Length,
+	ylab = "Sepal Length",
+	main = "Sepal Length data"
+)
+
+
+# Scatter plot
+
+plot(
+	iris$Sepal.Length,
+	xlab = "Index",
+	ylab = "Sepal Length",
+	main = "Sepal Length Data"
+)

@@ -1,4 +1,5 @@
-#5. Group 620 high school seniors based on their grades in three subject areas: English, mathematics, and science with K-means clustering method.
+#5. Group 620 high school seniors based on their grades in three subject areas:
+# English, mathematics, and science with K-means clustering method.
 
 library(plyr)
 library(ggplot2)
@@ -19,14 +20,14 @@ show(grade_input)
 #are for the grades in the three subject areas. Because the student ID is not used 
 #in the clustering analysis, it is excluded from the k-means input matrix, kmdata
 
-kmdata_orig = as.matrix(grade_input[,c("Student","English","Math","Science")])
+kmdata_orig = as.matrix(grade_input[, c("Student", "English", "Math", "Science")])
 kmdata_orig
-kmdata <- kmdata_orig[,2:4]
-kmdata[1:10,]
+kmdata <- kmdata_orig[, 2:4]
+kmdata[1:10, ]
 
 
-km = kmeans(kmdata,3, nstart=25)
+km = kmeans(kmdata, 3, nstart=25)
 km
 
 
-fviz_cluster(km,data=kmdata,xlab="clusters", ylab="studentid")
+fviz_cluster(km, data=kmdata, xlab="clusters", ylab="studentid")

@@ -1,3 +1,5 @@
+# Interpret the data in the Anscombe dataset in R with linear regression.
+
 library(knitr)
 
 knitr::kable(anscombe)
@@ -12,8 +14,8 @@ aggregate(cbind(x, y) ~ Set, anscombe.data, sd)
 library(plyr)
 
 correlation <- function(data) {
-  x <- data.frame(r = cor(data$x, data$y))
-  return(x)
+	x <- data.frame(r = cor(data$x, data$y))
+	return(x)
 }
 
 ddply(.data = anscombe.data, .variables = "Set", .fun = correlation)
